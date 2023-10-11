@@ -34,7 +34,7 @@ export const ContactForm = () => {
       alert(`${newContact.name} is already in contacts.`);
       return;
     }
-    dispatch(addContact(newContact.name, newContact.phone));
+    dispatch(addContact(newContact));
     resetForm({ name: '', phone: '' });
   };
 
@@ -56,7 +56,7 @@ export const ContactForm = () => {
           Telephone number
         </label>
         <br />
-        <Field name="phone" placeholder="Enter number" />
+        <Field type="tel" name="phone" placeholder="Enter number" />
         <ErrorMessage name="phone" component="div" className={css.error} />
         <br />
         <button type="submit" className={css.button_add}>
